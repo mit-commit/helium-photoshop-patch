@@ -1,6 +1,6 @@
 This repository contains the code necessary to build the patch DLL used for in situ replacement of Photoshop filters with [Helium](https://github.com/CharithYMendis/Helium)-lifted replacements, as described in section 6.5 of the [Helium PLDI 2015 paper](http://groups.csail.mit.edu/commit/papers/2015/mendis-pldi15-helium.pdf).
 
-To build, run `./configure.py > Makefile`, then run `nmake`.  After Photoshop finishes initializing, inject combineddll.dll (with a tool such as [Process Hacker](http://processhacker.sourceforge.net/)).  Then use the Photoshop filters as normal -- the patch will redirect execution to the Helium-lifted implementations.
+To build, run `./configure.py > Makefile`, then run `nmake`.  After Photoshop finishes initializing, inject combineddll.dll (with a tool such as [Process Hacker](http://processhacker.sourceforge.net/)).  Then use the Photoshop filters as normal -- the patch will redirect execution to the Helium-lifted implementations.  `time_plugin_advanced.jsx` contains ExtendScript code to collect timings -- edit `doStuff` to run the desired filters, then run the script without and with the patch DLL.
 
 The Helium outputs in photoshop_*.cpp have been pretty-printed and scheduled using an autotuner, as described in the paper.
 
